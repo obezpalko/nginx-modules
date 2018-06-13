@@ -5,7 +5,7 @@
 NGINX_VERSION=${NGINX_VERSION:-1.13.7}
 GITHUB_MODULES=${GITHUB_MODULES:-openresty/headers-more-nginx-module nginx-modules/ngx_cache_purge opentracing-contrib/nginx-opentracing/opentracing }
 
-sudo apt-get -y install libpcre3-dev libssl-dev git-core gnupg2 g++
+apt-get -y install libpcre3-dev libssl-dev git-core gnupg2 g++
 [ -r "nginx-${NGINX_VERSION}.tar.gz" ] || wget -q http://nginx.org/download/nginx-${NGINX_VERSION}.tar.gz
 [ -r "nginx-${NGINX_VERSION}.tar.gz.asc" ] || wget -q http://nginx.org/download/nginx-${NGINX_VERSION}.tar.gz.asc
 gpg2 --list-keys a1c052f8 2>/dev/null || gpg2 --keyserver ipv4.pool.sks-keyservers.net --recv a1c052f8
