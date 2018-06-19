@@ -8,6 +8,6 @@ GITHUB_MODULES=${GITHUB_MODULES:-openresty/headers-more-nginx-module nginx-modul
 dynamic_modules=""
 
 for module in ${GITHUB_MODULES} ; do
-    ./build_module.sh -r 15 https://github.com/$(echo $module | sed 's#^\([^/]*\)/\([^/]*\)\(/[^/]*\)$#\1/\2#').git
+    ./build_module.sh -s -r 15 https://github.com/$(echo $module | sed 's#^\([^/]*\)/\([^/]*\)\(/[^/]*\)$#\1/\2#').git
 done
 
