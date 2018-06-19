@@ -256,6 +256,7 @@ fi
 #
 # Check the module sources look OK
 #
+ls -la $MODULE_DIR
 if [ ! -f $MODULE_DIR/config ]; then
 	echo "$ME: ERROR: Cannot locate module config file - quitting"
 	exit 1
