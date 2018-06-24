@@ -256,6 +256,10 @@ fi
 #
 # Check the module sources look OK
 #
+if [ $MODULE_NAME = "opentracing" ]; then
+  mv $MODULE_DIR/$MODULE_NAME/* $MODULE_DIR
+fi
+
 if [ ! -f $MODULE_DIR/config ]; then
 	echo "$ME: ERROR: Cannot locate module config file - quitting"
 	exit 1
@@ -389,14 +393,11 @@ echo "$ME: INFO: Building"
 if [ -d $PACKAGING_ROOT -a "$SAY_YES" = "-y" ]; then
         rm -fr $PACKAGING_ROOT
 fi
-ls -la
-cat Makefile
 make prepare-build-env
 if [ $? -ne 0 ]; then
 	echo "$ME: ERROR: Unable to prepare build environment - quitting"
 	exit 1
 fi
-
 if [ "$PKG_MGR" = "yum" ]; then
 	cd ~/rpmbuild/SPECS
 else
