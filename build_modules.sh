@@ -9,3 +9,6 @@ GITHUB_MODULES=${GITHUB_MODULES:-openresty/headers-more-nginx-module nginx-modul
 for module in ${GITHUB_MODULES} ; do
     ./build_module.sh -o /tmp -s -y -r ${NGINX_PLUS_RELEASE} https://github.com/${module}.git
 done
+
+
+ls -l /tmp/*.deb
