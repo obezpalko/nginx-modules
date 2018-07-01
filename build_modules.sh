@@ -13,6 +13,6 @@ done
 
 #uploading to artifactory
 for package in $(ls /tmp/nginx_modules_packages) ; do
-    curl -u "admin:avIIon11" -XPUT "https://repo.dev.wixpress.com/artifactory/nginx-modules/${package};deb.distribution=stable;debcomponent=main;deb.architecture=amd64" -T /tmp/nginx_modules_packages/${package}
+    curl -u "admin:avIIon11" -XPUT "https://repo.dev.wixpress.com/artifactory/nginx-modules/${package};deb.distribution=stable;deb.component=main;deb.architecture=amd64" -T /tmp/nginx_modules_packages/${package}
 done
 
